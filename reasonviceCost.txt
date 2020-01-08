@@ -1,0 +1,3 @@
+SELECT COUNT(rf.frame_no) as 'dpt_count',rf.req_date,st.department,otr.reason from confirm_frame cf,request_frame rf,request_frame_resources rfr,stakeholders st,ot_reason otr
+                        where  cf.frame_no = rf.frame_no and cf.manager_status = 'Accept' and  rfr.frame_no = rf.frame_no and rfr.boiler > 0.00 and rf.frame_by = st.username 
+                        and rf.req_date = '2019/05/31' and st.department = 'Production VSM 01' and otr.frame_no = cf.frame_no
